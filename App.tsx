@@ -6,7 +6,7 @@ export default function App() {
       <View>
         <Text>My view</Text>
       </View>
-      <Text>Is it working?</Text>
+      <Text style={styles.text}>Is it working?</Text>
       <Button title="My button" />
     </View>
   );
@@ -18,5 +18,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  text: {
+    fontSize: 18,
+    margin: 16,
+    padding: 16,
+    borderWidth: 1,
+    backgroundColor: 'red',
   },
 });
