@@ -19,10 +19,13 @@ export default function App(): JSX.Element {
           onChange={e => setGoal(e.nativeEvent.text)}
         />
         <Button title="Add goal" onPress={handleAddGoal} />
+        <Button title="Reset goals" onPress={() => setCourseGoals([])} />
       </View>
-      <View style={styles.goals}>
+      <View style={styles.goalContainer}>
         {courseGoals.map(g => (
-          <Text key={g}>{g}</Text>
+          <View key={g} style={styles.textGoal}>
+            <Text>{g}</Text>
+          </View>
         ))}
       </View>
     </View>
@@ -42,6 +45,16 @@ const styles = StyleSheet.create({
     marginRight: 8,
     padding: 8,
   },
+  goalContainer: {
+    flex: 5,
+  },
+  textGoal: {
+    borderRadius: 6,
+    backgroundColor: 'grey',
+    margin: 8,
+    padding: 8,
+    color: 'white',
+  },
   inputContainer: {
     flex: 1,
     flexDirection: 'row',
@@ -50,8 +63,5 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     borderBottomWidth: 1,
     borderColor: '#cccc',
-  },
-  goals: {
-    flex: 4,
   },
 });
