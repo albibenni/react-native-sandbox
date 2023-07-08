@@ -21,11 +21,10 @@ export default function App(): JSX.Element {
         <Button title="Add goal" onPress={handleAddGoal} />
       </View>
       <View style={styles.goals}>
-        <Text>List of Goals..</Text>
+        {courseGoals.map(g => (
+          <Text key={g}>{g}</Text>
+        ))}
       </View>
-      {courseGoals.map(g => (
-        <Text>{g}</Text>
-      ))}
     </View>
   );
 }
